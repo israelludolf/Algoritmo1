@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Atividade05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		/*
+		5 - Solicite ao usuário que informe o seu cargo e salário na empresa que trabalha.
+		Em seguida, de acordo com a tabela abaixo, informe a quantia que ele tem
+		disponível para empréstimo e o cargo que ele informou.
+		 */
+		
+		// criando varivaies 
+		
+		char cargo; 
+		int salario;
+		double diretoria, gerencia, operacional;
+		
+						
+
+		Scanner entrada = new Scanner(System.in);
+		
+		
+		System.out.print(" informe se o cargo é Diretoria, Gerência ou Operacional: ");
+		cargo = entrada.nextLine().charAt(0);
+		
+
+		System.out.print(" informe o seu salário: ");
+		salario = entrada.nextInt();
+		
+		diretoria = ((salario/100)*30); // 30 %
+		gerencia = ((salario/100)*25);  // 25 %
+		operacional = ((salario/100)*20); // 20 %
+		
+		switch (cargo) {
+		
+		case 'D':
+		case 'd':
+			System.out.print(" se o cargo é a Diretoria, Sendo assim está liberado um empréstimo de 30% "
+					+ "do valor do seu salario, O valor do empréstimo é: " + diretoria );
+			 
+			break;
+			
+		case 'G':
+		case 'g':			
+					System.out.print(" se o cargo é a Gerência, Sendo assim está liberado um empréstimo de 25%, "
+							+ "do valor do seu salario. O valor do empréstimo é:  " + gerencia );
+			break;
+			
+		case 'O':
+		case 'o':	
+			
+			System.out.print(" se o cargo é do nivel Operacional, Sendo assim está liberado um empréstimo de 20%, "
+					+ "do valor do seu salario. O valor do empréstimo é:  "
+					+ "\n" + gerencia);
+			break;
+			
+		default:
+			System.out.println("Cargo inválido ou inesistente em nosso banco de dados.");
+			System.exit(0);
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
